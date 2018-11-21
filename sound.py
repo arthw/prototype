@@ -11,8 +11,8 @@ print(len(samples))
 
 frequencies, times, spectrogram = signal.spectrogram(samples[:10000], sample_rate)
 
-plt.pcolormesh(times, frequencies, spectrogram)
-plt.imshow(spectrogram)
-plt.ylabel('Frequency [Hz]')
-plt.xlabel('Time [sec]')
+f, ax = plt.subplots()
+ax.pcolormesh(times, frequencies, spectrogram, cmap='viridis')
+ax.set_ylabel('Frequency [kHz]')
+ax.set_xlabel('Time [s]');
 plt.show()
